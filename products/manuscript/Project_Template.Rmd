@@ -88,7 +88,7 @@ The data collected includes:
 
 2. Are there predictive diagnostic criteria in transient vs. progressive _Pneumocystis_ infection?
 
-3. Are there immune changes of note related to Pc colonization or infection. 
+3. Are there immune changes of note related to Pc colonization or infection?
 
 
 # Methods and Results
