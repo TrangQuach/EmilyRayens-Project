@@ -1,7 +1,7 @@
 ---
-title: "Example Template for Data Analysis Project"
+title: "The Relationship of Diagnostic Markers with the Ebb and Flow of Pneumocystis Colonization"
 subtitle: ""
-author: Andreas Handel
+author: Emily Rayens
 institute: "University of Georgia"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -15,7 +15,7 @@ csl: ../apa.csl
 
 
 # Summary/Abstract
-_Write a summary of your project._
+_Pneumocystis jirovecii_ (Pc) is an opportunistic fungal infection, primarily associated with an AIDS diagnosis. However, constant monitoring shows healthy and HIV+ indviduals lacking other diagnostic criteria are also transiently colonized with Pc, and demonstrate capability of clearing this infection before it develops into an intersitial pneumonia. In this analysis, the diagnosis of Pc through PCR was compared to the other diagnostic criteria to more accurately capture the relationship of these criteria to the transient colonization of Pc. Hopefully we find something. 
 
 # Illustrating setup
 _This section is only there to show how to insert results from other places in the project and how to cite figures and other references. Delete this whole section at some point._
@@ -43,15 +43,50 @@ Note that this cited reference will show up at the end of the document, the refe
 
 # Introduction (required for part 1)
 
-## General Background Information
-_Provide enough background on your topic that others can understand the why and how of your analysis_ 
+## Background
+_Pneumocystis jirovecii_ (Pc) is the causative agent of an interstitial pneumonia in immunocompromised populations, inclulding those with HIV, transplant recipients, and cancer patients undergoing chemotherapy or radiation treatments. Pc presents a number of clinical issues including a lack of FDA-approved vaccines and limited treatment options._
+
+Among the issues associated with Pc infection, it is difficult to determine the incidence of this infection because of a lack of clear diagnostics. Unlike most bacterial and fungal infections, Pc cannot be cultured for infection confirmation. Instead, diganosis is reliant on a combination of parameters including sampling of bronchoalveolar lavage fluid (BALF) for PCR, cell differential, and smear. Additionally, analysis of criteria of the immunecompromised status, such as CD4+ T cell count in HIV+ individuals or transplant recipients, may provide additional information.
+
+The story is further complicated by the fact that healthy and HIV+/non-AIDS patients can be transiently colonized and can appropriately clear the infection. 
+In this analysis, the relationship of all Pc diagnostic criteria will be examined in relationship to the most reliable diagnostic criteria (PCR) to capture the immune system response to colonization and fulminant pneumonia.   
 
 ## Description of data and data source
-_Describe what the data is, what it contains, where it is from, etc._
+This data set has been generated from a number of studies in a non-human primate model of HIV and Pc co-infection. Data was collected prior to and following infection with Simian Immunodeficiency Virus (SIV) through ~40 weeks post infection. 
 
-## Questions/Hypotheses to be addressed
-_State the research questions you plan to answer with this analysis_
+The data collected includes:
 
+### 1. _Pneumocystis_ diagnosis from bronchoalveolar lavage fluid (BALF)
+
+  A. PCR status:
+   
+    i. First round positive (deemed equivalent to pneumonia)
+    ii. Second round positive (equivalent to colonization)
+    iii. Negative 
+   
+  B. BALF differential for neutrophil count (marker for infection)
+
+  C. BALF Smear
+    
+    i. Positive (evidence of cysts or trophs)
+    ii. Inflammation (foamy exudate)
+    iii. Clear
+
+### 2. Immune System Status
+  
+  A. Lymphocyte Count
+  
+  B. CD4+ T cell count
+  
+  C. Vaccine Status
+
+
+## Questions to be addressed
+1. Does experimental vaccination reduce the incidence of Pc in this cohort?
+
+2. Are there predictive diagnostic criteria in transient vs. progressive _Pneumocystis_ infection?
+
+3. Are there immune changes of note related to Pc colonization or infection. 
 
 
 # Methods and Results
