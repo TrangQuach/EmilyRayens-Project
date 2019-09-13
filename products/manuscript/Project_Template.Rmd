@@ -78,7 +78,9 @@ The data collected includes:
   
   B. CD4+ T cell count
   
-  C. Vaccine Status
+  C. Viral Load
+  
+  D. Vaccine Status
 
 
 ## Questions to be addressed
