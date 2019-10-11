@@ -64,8 +64,8 @@ The data collected includes:
 
 
 ```{r}
-processeddata <- readRDS("~/Documents/GitHub/epid8060fall2019/EmilyRayens-Project/data/processed_data/processeddata.rds")
-Pc <- processeddata
+library(readxl)
+Pc <- read_excel("data/raw_data/Pc.xlsx")
 ```
 ```{r}
 str(Pc)
@@ -96,18 +96,13 @@ _As applicable, explain where and how you got the data. If you directly import t
 _Write code that reads in the file and cleans it so it's ready for analysis. Since this will be fairly long code for most datasets, it might be a good idea to have it in one or several R scripts. If that is the case, explain here briefly what each file does. The files themselves should be commented well so everyone can follow along._
 
 ## Univariate analysis
-```{r}
-library(ggplot2)
-library(dplyr)
-library(broom)
-```
 
-```{r}
-p1 <- Pc %>% ggplot(aes(x=Neutrophils, y=PcStatus)) + geom_point() + geom_smooth(method='lm')
-```
+
 
 ## Bivariate analysis
-_Create plots or tables and compute simple statistics (e.g. t-tests, simple regression model with 1 predictor, etc.) to look for associations between your outcome(s) and each individual predictor variable_
+```{r resultfigure,  fig.cap='Analysis figure.', echo=FALSE}
+knitr::include_graphics("../../results/resultfigure.png")
+```
 
 
 ## Full analysis
