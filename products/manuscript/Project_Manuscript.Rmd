@@ -21,26 +21,6 @@ _Pneumocystis jirovecii_ (Pc) is an opportunistic fungal infection, primarily as
 _This section is only there to show how to insert results from other places in the project and how to cite figures and other references. Delete this whole section at some point._
 
 
-This paper [@Leek2015a] discusses types of analyses. 
-
-
-Figure \@ref(fig:resultfigure) shows a result figure from the analysis.
-
-```{r resultfigure,  fig.cap='Analysis figure.', echo=FALSE}
-knitr::include_graphics("../../results/resultfigure.png")
-```
-
-Table \@ref(tab:resulttable) shows a result table from the analysis.
-
-```{r resulttable,  echo=FALSE}
-resulttable=readRDS("../../results/resulttable.rds")
-knitr::kable(resulttable, caption = 'Result Table.')
-```
-
-
-Note that this cited reference will show up at the end of the document, the reference formatting is determined by the CSL file specified in the YAML header. Many more style files for almost any journal [are available](https://www.zotero.org/styles). You also specify the location of your bibtex reference file in the YAML. You can call your reference file anything you like, I just used the generic word `references.bib` but giving it a more descriptive name is probably better.
-
-
 # Introduction (required for part 1)
 
 ## Background
@@ -84,6 +64,10 @@ The data collected includes:
 
 
 ```{r}
+processeddata <- readRDS("~/Documents/GitHub/epid8060fall2019/EmilyRayens-Project/data/processed_data/processeddata.rds")
+Pc <- processeddata
+```
+```{r}
 str(Pc)
 summary(Pc)
 ```
@@ -112,7 +96,15 @@ _As applicable, explain where and how you got the data. If you directly import t
 _Write code that reads in the file and cleans it so it's ready for analysis. Since this will be fairly long code for most datasets, it might be a good idea to have it in one or several R scripts. If that is the case, explain here briefly what each file does. The files themselves should be commented well so everyone can follow along._
 
 ## Univariate analysis
-_Use a combination of text/tables/figures to explore and describe your data. You should produce plots or tables or other summary quantities for most of your variables. You definitely need to do it for the important variables, i.e. if you have main exposure or outcome variables, those need to be explored. Depending on the total number of variables in your dataset, explore all or some of the others._
+```{r}
+library(ggplot2)
+library(dplyr)
+library(broom)
+```
+
+```{r}
+p1 <- Pc %>% ggplot(aes(x=Neutrophils, y=PcStatus)) + geom_point() + geom_smooth(method='lm')
+```
 
 ## Bivariate analysis
 _Create plots or tables and compute simple statistics (e.g. t-tests, simple regression model with 1 predictor, etc.) to look for associations between your outcome(s) and each individual predictor variable_
