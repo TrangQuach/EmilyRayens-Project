@@ -96,11 +96,37 @@ _As applicable, explain where and how you got the data. If you directly import t
 _Write code that reads in the file and cleans it so it's ready for analysis. Since this will be fairly long code for most datasets, it might be a good idea to have it in one or several R scripts. If that is the case, explain here briefly what each file does. The files themselves should be commented well so everyone can follow along._
 
 ## Univariate analysis
+### Exploring the Pc Diagnostic Variables by Identifier
+This is a summary of the values of the Pc Diagnostic Variables by Identifier. I am struggling to display the table I generated in the analysisscript and what I can see within the RMarkdown document when I run the chunk of code. Any assistance on this is appreciated.  
+```{r,  echo=FALSE}
+resulttable <- readRDS("~/Documents/GitHub/epid8060fall2019/EmilyRayens-Project/results/resulttable.rds")
+resulttable.m<-as.matrix(resulttable)
+resulttable.df<-as.data.frame(resulttable.m)
+knitr::kable(resulttable.df, caption = 'Summary of Pc Characteristics by Individual')
+```
+
+### Exploring the Pc Diagnostic Variables by Vaccine Status
+This is to get first impressions of differences in the vaccinated and unvaccinated populations in a first attempt to answer question 1. 
+```{r,  echo=FALSE}
+resulttable2 <- readRDS("~/Documents/GitHub/epid8060fall2019/EmilyRayens-Project/results/resulttable2.rds")
+resulttable2.m<-as.matrix(resulttable2)
+resulttable2.df<-as.data.frame(resulttable2.m)
+knitr::kable(resulttable2.df, caption = 'Summary of Charateristics by Vaccine Status')
+```
+
+
 
 
 
 ## Bivariate analysis
+This is a clumsy attempt to analyze the neturophil count (major marker of infection) by vaccine status. We can actually see here that our vaccinated population (on the left) has a lower number of neutrophils counted over the course of the study. 
+
 ```{r resultfigure,  fig.cap='Analysis figure.', echo=FALSE}
+knitr::include_graphics("../../results/resultfigure2.png")
+```
+
+This is a brief display of the relationship between Pc Status and Neutrophil Count. We can see that as Pc status gets categorized more highly (greater disease), measured neutrophil count increases. 
+```{r resultfigure2,  fig.cap='Analysis figure.', echo=FALSE}
 knitr::include_graphics("../../results/resultfigure.png")
 ```
 
@@ -124,3 +150,5 @@ _Include citations in your Rmd file using bibtex, the list of references will au
 
 # References
 
+# Ongoing Issues:
+Displaying a simple table in the univariate analysis section. The tables look as I expect in RStudio but it does not appear that way in the output. 
