@@ -63,10 +63,11 @@ The data collected includes:
   D. Vaccine Status
 
 
-```{r}
+```{r load data}
 library(readxl)
-Pc <- read_excel("data/raw_data/Pc.xlsx")
+Pc <- read.csv("data/raw_data/Pc.csv")
 ```
+
 ```{r}
 str(Pc)
 summary(Pc)
