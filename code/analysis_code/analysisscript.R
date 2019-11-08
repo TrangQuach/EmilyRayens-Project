@@ -18,10 +18,13 @@ p1 <- Pc %>% ggplot(aes(x=PcStatus, y=Neutrophils)) + geom_point() + geom_smooth
 p2 <- factor(sample(Vaccinated("0","1"), 10, replace=TRUE))
 p3 <- p2 %>% ggplot(aes(x=Vaccinated, y=Neutrophils)) + geom_bar(stat="identity") 
 
+p4 <- Pc %% ggplot(aes(x=Neutrophils, y=PcStatus)) +geom_jitter()
+
 #save figures
 
 ggsave(filename="./results/resultfigure.png",plot=p1) 
 ggsave(filename="./results/resultfigure2.png",plot=p3) 
+ggsave(filename="./results/resultfigure3.png",plot=p4)
 
 # fit linear model
 

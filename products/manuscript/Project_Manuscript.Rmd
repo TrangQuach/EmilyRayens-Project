@@ -96,7 +96,7 @@ _As applicable, explain where and how you got the data. If you directly import t
 ## Data import and cleaning
 _Write code that reads in the file and cleans it so it's ready for analysis. Since this will be fairly long code for most datasets, it might be a good idea to have it in one or several R scripts. If that is the case, explain here briefly what each file does. The files themselves should be commented well so everyone can follow along._
 
-## Univariate analysis
+## Univariate analysis (Part 2)
 ### Exploring the Pc Diagnostic Variables by Identifier
 This is a summary of the values of the Pc Diagnostic Variables by Identifier. I am struggling to display the table I generated in the analysisscript and what I can see within the RMarkdown document when I run the chunk of code. Any assistance on this is appreciated.  
 ```{r,  echo=FALSE}
@@ -119,20 +119,35 @@ knitr::kable(resulttable2.df, caption = 'Summary of Charateristics by Vaccine St
 
 
 
-## Bivariate analysis
-This is a clumsy attempt to analyze the neturophil count (major marker of infection) by vaccine status. We can actually see here that our vaccinated population (on the left) has a lower number of neutrophils counted over the course of the study. 
+## Bivariate analysis (Part 3)
+### Does Vaccination Reduce the Incidence of Pc?
+When starting to address our questions, we want to plot the data to get a sense of what is there. First and foremost, we want to adress is experimental vaccination reduces the incidence of Pc in this cohort.
 
-```{r resultfigure,  fig.cap='Analysis figure.', echo=FALSE}
+```{r resultfigure1,  fig.cap='Figure 1: Vaccination reduces Pc Incidence', echo=FALSE}
+knitr::include_graphics("../../results/resultfigure3.png")
+```
+We can see here that other than a signle point (which may prove to be an outlier on further examination), our vaccinated cohort has lower incidence of Pc when plotted. We can see smaller numbers at the 1 and 2 (more severe) categorizations in this cohort. We will evaluate in the full analysis if this is a significant difference. 
+
+### Does Vaccination also affect other major markers of infection?
+Neutrophil count is our major marker for an active infection so we also want to see if vaccination status will have a significant effect on other markers of Pc. 
+
+```{r resultfigure2,  fig.cap='Figure 2: Vaccination reduces active infection', echo=FALSE}
 knitr::include_graphics("../../results/resultfigure2.png")
 ```
+We can see here that our vaccinated population also has a lower distribution of neutrophils across the course of the studies. This further supports the results seen in the previous figure. 
 
+### Can we confirm that Pc status is associated with markers of infection?
 This is a brief display of the relationship between Pc Status and Neutrophil Count. We can see that as Pc status gets categorized more highly (greater disease), measured neutrophil count increases. 
-```{r resultfigure2,  fig.cap='Analysis figure.', echo=FALSE}
+```{r resultfigure3,  fig.cap='Figure 3: Pc Status is associated with Neutrophil Count', echo=FALSE}
 knitr::include_graphics("../../results/resultfigure.png")
 ```
+Does experimental vaccination reduce the incidence of Pc in this cohort?
 
+  2. Are there predictive diagnostic criteria in transient vs. progressive _Pneumocystis_ infection?
 
-## Full analysis
+  3. Are there immune changes of note related to Pc colonization or infection?
+
+## Full analysis (Part 4)
 _Use one or several suitable statistical/machine learning methods to analyze your data and to produce meaningful figures, tables, etc. This might again be code that is best placed in one or several separate R scripts that need to be well documented. You can then load the results produced by this code_
 
 # Discussion
