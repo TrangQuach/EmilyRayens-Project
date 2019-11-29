@@ -5,7 +5,7 @@
 #and saves the results to the results folder
 
 library(readxl)
-Pc <- read_excel("data/raw_data/Pc.xlsx")
+Pc <- read_xlsx("data/raw_data/Pc.xlsx")
 
 library(ggplot2)
 library(dplyr)
@@ -47,4 +47,11 @@ t2 <- kable(a2, caption = "Table 2")
 
 saveRDS(t1, file = "./results/resulttable.rds")
 saveRDS(t2, file = "./results/resulttable2.rds")
+
+
+resulttable <- readRDS("~/Documents/GitHub/epid8060fall2019/EmilyRayens-Project/results/resulttable.rds")
+resulttable.m<-as.matrix(resulttable)
+resulttable.df<-as.data.frame(resulttable.m)
+knitr::kable(resulttable.df, caption = 'Summary of Pc Characteristics by Individual')
+
   

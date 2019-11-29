@@ -17,11 +17,9 @@ csl: ../apa.csl
 # Summary/Abstract
 _Pneumocystis jirovecii_ (Pc) is an opportunistic fungal infection, primarily associated with an AIDS diagnosis. However, constant monitoring shows healthy and HIV+ indviduals lacking other diagnostic criteria are also transiently colonized with Pc, and demonstrate capability of clearing this infection before it develops into an intersitial pneumonia. In this analysis, the diagnosis of Pc through PCR was compared to the other diagnostic criteria to more accurately capture the relationship of these criteria to the transient colonization of Pc. Hopefully we find something. 
 
-# Illustrating setup
-_This section is only there to show how to insert results from other places in the project and how to cite figures and other references. Delete this whole section at some point._
 
 
-# Introduction (required for part 1)
+# Introduction 
 
 ## Background
 _Pneumocystis jirovecii_ (Pc) is the causative agent of an interstitial pneumonia in immunocompromised populations, inclulding those with HIV, transplant recipients, and cancer patients undergoing chemotherapy or radiation treatments. Pc presents a number of clinical issues including a lack of FDA-approved vaccines and limited treatment options._
@@ -61,18 +59,6 @@ The data collected includes:
   C. Viral Load
   
   D. Vaccine Status
-
-
-```{r load data}
-library(readxl)
-Pc <- read.csv("data/raw_data/Pc.csv")
-```
-
-```{r}
-str(Pc)
-summary(Pc)
-```
-
 
 
 
