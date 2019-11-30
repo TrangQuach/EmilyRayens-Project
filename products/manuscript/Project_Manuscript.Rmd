@@ -89,7 +89,7 @@ While this information will be useful to us moving forward, it is difficult to m
 
 ### Exploring the Pc Diagnostic Variables by Vaccine Status
 This is to get first impressions of differences in the vaccinated and unvaccinated populations in a first attempt to answer question 1. 
-```{r resulttable2,  fig.cap='Table 1: Summary of Characteristics by Vaccine Status', echo=FALSE}
+```{r resulttable2,  fig.cap='Table 2: Summary of Characteristics by Vaccine Status', echo=FALSE}
 knitr::include_graphics("../../results/resulttable2.png")
 ```
 
@@ -121,27 +121,44 @@ knitr::include_graphics("../../results/resultfigure.png")
 
 
 ## Full analysis (Part 4)
-_Use one or several suitable statistical/machine learning methods to analyze your data and to produce meaningful figures, tables, etc. This might again be code that is best placed in one or several separate R scripts that need to be well documented. You can then load the results produced by this code_
+In order to answer the first question regarding the incidence of _Pneumocystis_ and pneumonia in this cohort, we will turn to a surivival curve plotting the incidence of the pneumonia in the vaccinated and unvaccinated cohorts.
+```{r resultfigure4,  fig.cap='Figure 4: Survival Curve from PCP', echo=FALSE}
+knitr::include_graphics("../../results/Picture1.png")
+```
+
+With a p-value of 0.0489 by Mantel-Cox, vaccination significantly reduces the incidence of PCP in these cohorts. This is crucial in reducing mortality but colonization with _Pneumocystis_ (or a 2 in Pc Status) can also play a long-term role in the health of the individual. We next examined differences in the survival curves with colonization, defined as being a Pc Status of 2 at two consecutive timepoints. 
+
+```{r resultfigure5,  fig.cap='Figure 5: Survival Curve from Colonization', echo=FALSE}
+knitr::include_graphics("../../results/Picture2.png")
+```
+
+As is evident from the graph and from a p-value of 0.498 by Mantel-Cox, vaccination does significantly reduce colonization with _Pneumocystis_. 
+
+However, we can see the relationship of colonization and vaccination when examining progression from colonization into pneumonia (Progressive phenotype) compared to resolving or maintaining colonization (Transient phenotype). 
+
+```{r resultfigure6,  fig.cap='Table 3: Relative Risk', echo=FALSE}
+knitr::include_graphics("../../results/table3.png")
+```
+ As we can see here, vaccinated animals have 0.18 times the risk of progressing into PCP compared to unvaccinated animals (p=0.0406). 
 
 # Discussion
 
 ## Summary and Interpretation
-  1. Does experimental vaccination reduce the incidence of Pc in this cohort?
+This data analysis served to examine the relationship between vaccination, _Pneumocystis_ diagnosis, and the secondary diagnostic markers. To address the first question, experimental vaccination does reduce the incidence of _Pneumocystis_ pneumonia (p=0.0489) but does not significantly alter colonization in this cohort (p=0.498). However, vaccination did seem to have a signficant relationship with changing the course of colonization. As we can see in Table 3, vaccinated animals had 0.18 times the risk of progressing into PCP compared the unvaccinated cohort (p=0.0406). 
 
   2. Are there predictive diagnostic criteria in transient vs. progressive _Pneumocystis_ infection?
 
   3. Are there immune changes of note related to Pc colonization or infection?
 
 ## Strengths and Limitations
-_Discuss what you perceive as strengths and limitations of your analysis._
+This analysis included several limitations, the first of which is that this data set was relatively small with incomplete individual data points. 
+
+The strength of this analysis is that it is the first to take an in-depth look at the diagnostic markers for _Pneumocystis_ infection. As related human cohorts are nearly impossible to study long term due to the invaive nature of diagnosis, this data set also represents one of the most complete set of data on this subject.  
 
 ## Conclusions
-_What are the main take-home messages?_
+Experimental vaccination reduces the incidence of _Pneumocystis_ pneumonia but doesn't reduce the incidence of Pc colonization. 
 
 
 _Include citations in your Rmd file using bibtex, the list of references will automatically be placed at the end_
 
 # References
-
-# Ongoing Issues:
-Displaying a simple table in the univariate analysis section. The tables look as I expect in RStudio but it does not appear that way in the output. 
